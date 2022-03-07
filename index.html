@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Ball Blast</title>
+    <!--Website icon-->
+    <link rel="shortcut icon" type="image/png" href="paintball.png">
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+    <!--Tailwind css and style-->
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"/>
+    <style>
+        canvas{
+            border: 1px solid black;
+        }
+        
+        body{
+            margin: 0;
+            background: black;
+            overflow: hidden;
+        }
+
+        /*adding gradient effect on the text*/
+        .gradient-text{
+            background-color: #ca4246;
+            background-image: linear-gradient(45deg,
+                                            #ca4246 16.666%,
+                                            #e16541 16.666%,
+                                            #f18f43 33.333%,
+                                            #f18f43 50%,
+                                            #8b9862 50%,
+                                            #8b9862 66.666%,
+                                            #476098 66.666%,
+                                            #476098 83.333%,
+                                            #a7489b 83.333%);
+            background-size: 100%;
+            background-repeat: repeat;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+        }
+
+        #gameovertxt, #bigScoreEl, #newHighScoreText, #instBtn{
+            font-family: 'Gorditas', cursive;
+            display: none;
+        }
+
+        #textScoreEl, #scoreDisplay, #highscoreDisplay{
+            font-family: 'Orelega One', cursive;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- adding a UI panel to display the score and the start button -->
+    <div class="fixed inset-0 flex items-center justify-center" id="modalEl">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 text-center">
+            <!--Title-->
+            <h1 class="gradient-text text-5xl font-bold select-none" id="title" style="font-family: 'Gorditas', cursive;">Colour Ball Blast</h1>
+            <!--Instruction and Information--> 
+            <p class="text-lg select-none p-2" id="instruction" style="font-family: 'Orelega One', cursive;">Save the white ball from getting coloured
+                <br>- - How to Play? - -
+                <br>Click on the coloured balls to score points.
+            </p>
+            <!--Game over and scores-->
+            <p class="gradient-text text-5xl font-bold select-none" id="gameovertxt">Game Over</p>
+
+            <h1 class="text-4xl font-bold leading-none" id="bigScoreEl">0</h1>
+            <p class="text-sm text-gray-600 mb-4" id="textScoreEl">Your Score</p>
+
+            <h1 class="text-4xl font-bold leading-none" id="bigHighScoreEl" style="font-family: 'Gorditas', cursive;"></h1>
+            <p class="text-sm text-gray-600 mb-4" style="font-family: 'Orelega One', cursive;">High Score</p>
+
+            <p class="gradient-text font-bold text-3xl text-gray-600 mb-4" id="newHighScoreText">!! New High Score !!</p>
+            
+            <!--Start and instructions button-->
+            <div>
+                <button class="bg-blue-500 text-white w-full py-2 rounded-full font-bold text-lg focus:outline-none" id="startGameBtn" style="font-family: 'Gorditas', cursive;">S t a r t</button>
+            </div>
+
+            <div>
+                <button class="bg-teal-500 w-full rounded-full font-bold text-lg select-none py-2 text-white mt-2 focus:outline-none" id="instBtn">I n s t r u c t i o n s</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Scores on canvas-->
+    <div class="grid grid-cols-2 grid-rows-1 px-5">
+        <div class="text-white text-lg select-none" id="scoreDisplay">
+            <span>Score: </span>
+            <span id="scoreEl">0</span>
+        </div>
+    
+        <div class="text-white text-right text-lg select-none" id="highscoreDisplay">
+            <span>High score: </span>
+            <span id="highscoreEl"></span>
+        </div>
+    </div>
+
+    <canvas></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    ></script>     
+    <script src="script.js"></script>
+</body>
+</html>

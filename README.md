@@ -10,4 +10,4 @@ As the player progresses through the game, the difficulty level increases with m
 
 Colour Ball Blast does not feature any power-ups. Instead, the game is designed to be challenging and addictive through its increasing difficulty levels and the player's need for quick reflexes and accurate aiming.
 
-Overall, "Colour Ball Blast" is a fun and engaging game that can be enjoyed by players of all ages. Its simple controls and intuitive gameplay make it easy to pick up, while its colorful graphics and upbeat music create a lively and engaging atmosphere that will keep players coming back for more.
+Overall, Colour Ball Blast is a fun and engaging game that can be enjoyed by players of all ages. Its simple controls and intuitive gameplay make it easy to pick up, while its colorful graphics and upbeat music create a lively and engaging atmosphere that will keep players coming back for more.
